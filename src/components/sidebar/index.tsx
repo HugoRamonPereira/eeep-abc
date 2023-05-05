@@ -13,6 +13,7 @@ import {
 	useDisclosure,
 	BoxProps,
 	FlexProps,
+	Image,
 } from '@chakra-ui/react';
 import {
 	FiHome,
@@ -24,6 +25,7 @@ import {
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
+import LogoLiceu from '../../assets/img/Logo - Named.png';
 
 interface LinkItemProps {
   name: string;
@@ -33,7 +35,7 @@ const LinkItems: Array<LinkItemProps> = [
 	{ name: 'Início', icon: FiHome },
 	{ name: 'Sobre Nós', icon: FiTrendingUp },
 	{ name: 'Cursos', icon: FiCompass },
-	{ name: 'Equipe', icon: FiStar },
+	{ name: 'Professores', icon: FiStar },
 	{ name: 'Localização', icon: FiSettings },
 ];
 
@@ -81,9 +83,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 			h="full"
 			{...rest}>
 			<Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-				<Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-				</Text>
+				<Image src={LogoLiceu} alt='logo'></Image>
 				<CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
 			</Flex>
 			{LinkItems.map((link) => (
